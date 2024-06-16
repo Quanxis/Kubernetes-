@@ -1,0 +1,34 @@
+
+lab start intro-navigate
+oc login -u developer -p developer
+oc whoami --show-console
+
+Master Nodes: These nodes manage the cluster and are responsible for API access, scheduling, and the overall control of the system.
+
+Worker Nodes: These nodes run the containerized applications and services. They handle the actual workloads and are managed by the master nodes.
+
+Infrastructure Nodes: These nodes handle specific services like routers, monitoring, and logging, which support the operation of the cluster.
+cluster is called, master node and worker node combiantion 
+
+In OpenShift, a pod is the smallest and simplest Kubernetes object. It represents a single instance of a running process in your cluster.
+A pod encapsulates one or more containers (e.g., Docker containers), storage resources, a unique network IP, and options that govern how the containers should run.
+Containers within a pod share the same network namespace, meaning they can communicate with each other using localhost. 
+
+In essence, master nodes orchestrate and schedule, worker nodes execute and manage pods, and pods run the containerized applications.
+
+--------------------------------------------------------
+
+oc new-project chapter1
+oc new-app --name hello --image quay.io/redhattraining/hello-world-nginx:v1.0
+oc expose service hello
+oc get all      -to check all resources in the chapter1
+oc get pods      - displays the pods
+oc get nodes      - displays the all nodes
+oc get pod -o wide    - all the nodes, worker and master node and in which node its working                        -
+oc scale --replicas 4 deployment/hello    - to scale according to the requirement 
+oc delete project chapter1
+-----------------------------------------------
+
+oc get clusteroperators   - manages the cluster, openshift by internal applications which manages the cluster,
+imp components for api operator, authentication operator and so onfor the cluster
+
