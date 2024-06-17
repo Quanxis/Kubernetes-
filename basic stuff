@@ -29,6 +29,20 @@ oc scale --replicas 4 deployment/hello    - to scale according to the requiremen
 oc delete project chapter1
 -----------------------------------------------
 
+chpater 2
+
 oc get clusteroperators   - manages the cluster, openshift by internal applications which manages the cluster,
 imp components for api operator, authentication operator and so onfor the cluster
 
+to check what all pods are consuming by the operator,for example an image registry operator how many pods are currently running inside
+our cluster image registry, - oc get pods -n openshift-image-registry
+
+to check which pod is running in which nod, oc get pods -n openshift-image-registry -o wide
+
+to check the logs of the pods, - oc logs node-ca-<podeID> -n openshift-image-registry
+
+TROUBLESHOOTING
+
+oc status   -----to check status 
+oc get events ------ to check the events
+oc edit <deployment> -psql  -----open deployment yaml file
