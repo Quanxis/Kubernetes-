@@ -46,3 +46,27 @@ TROUBLESHOOTING
 oc status   -----to check status 
 oc get events ------ to check the events
 oc edit <deployment> -psql  -----open deployment yaml file
+------------------------------------------------------------
+chapter 3
+
+-Create the pods-containers project
+------oc new-project pods-containers
+
+--describes the project
+------oc describe project pods-containers
+
+As the developer user, create a pod called ubi9-user from a UBI9 base container image.
+The image is available in the registry.ocp4.example.com:8443/ubi9/ubi container registry. 
+Set the restart policy to Never and start an interactive session.Configure the pod to execute the whoami and id commands to determine the UIDs, supplemental groups, and GIDs of the container user in the pod.
+Delete the pod afterward.
+
+oc run -it ubi9-user --restart 'Never' \
+ --image registry.ocp4.example.com:8443/ubi9/ubi \
+ -- /bin/bash -c "whoami && id"
+
+To delete the pod
+oc delete pod ubi9-user
+
+Log in as the admin user with the redhatocp password.
+oc login -u admin -p redhatocp
+
