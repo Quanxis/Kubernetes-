@@ -1,4 +1,6 @@
 
+https://kubernetes.io/docs/reference/kubectl/quick-reference/
+
 lab start intro-navigate
 oc login -u developer -p developer    ----- username and password
 oc whoami --show-console             --- to show the URL
