@@ -1,7 +1,9 @@
 
 lab start intro-navigate
-oc login -u developer -p developer
-oc whoami --show-console
+oc login -u developer -p developer    ----- username and password
+oc whoami --show-console             --- to show the URL
+oc get routes -n openshift-console            -----to find the URL to the console pod
+crc console                      -------- brings up the crc console
 
 Master Nodes: These nodes manage the cluster and are responsible for API access, scheduling, and the overall control of the system.
 
@@ -27,6 +29,9 @@ oc get nodes      - displays the all nodes
 oc get pod -o wide    - all the nodes, worker and master node and in which node its working                        -
 oc scale --replicas 4 deployment/hello    - to scale according to the requirement 
 oc delete project chapter1
+
+log in as kubeadmin to full access, and as developer for limited access only
+
 -----------------------------------------------
 
 chpater 2
