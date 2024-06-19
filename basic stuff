@@ -9,7 +9,17 @@ oc login -u developer -p developer    ----- username and password
 oc whoami --show-console             --- to show the URL
 oc get routes -n openshift-console            -----to find the URL to the console pod
 crc console                      -------- brings up the crc console
-
+-----------------------------------------
+If during the exam you run into an issue that you are missing disk space on the VM you can do the following:
+-----------------------------------------
+# Remove ALL containers and ALL images
+podman rmi -a -f
+# Remove cache of packages
+rm -rf /var/cache/PackageKit
+# Remove Google Chrome
+su -
+dnf remove google-chrome
+----------------------------
 Master Nodes: These nodes manage the cluster and are responsible for API access, scheduling, and the overall control of the system.
 
 Worker Nodes: These nodes run the containerized applications and services. They handle the actual workloads and are managed by the master nodes.
