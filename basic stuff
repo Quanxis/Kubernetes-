@@ -1,5 +1,8 @@
 
 https://kubernetes.io/docs/reference/kubectl/quick-reference/
+vm user - student pw - student
+Username: gelamth
+Password: XX55E45E80
 
 lab start intro-navigate
 oc login -u developer -p developer    ----- username and password
